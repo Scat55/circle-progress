@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
     "@cyhnkckali/vue3-color-picker": "^2.1.7",
@@ -17,13 +18,18 @@
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
-    "@vitejs/plugin-vue": "^6.0.2",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitest/ui": "^4.0.18",
+    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
+    "happy-dom": "^20.8.3",
+    "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "prettier-plugin-vue": "^1.1.6",
     "sass-embedded": "^1.97.3",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
+    "vitest": "^4.0.18",
     "vue-tsc": "^3.1.5"
   }
 }

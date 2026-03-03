@@ -6,6 +6,8 @@
   ],
 
   "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
