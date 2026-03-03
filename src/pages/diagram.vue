@@ -116,12 +116,19 @@ const removeSector = (sector: Diagram) => {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
 
   &_content {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     gap: 16px;
     margin-top: 40px;
   }
@@ -131,7 +138,8 @@ const removeSector = (sector: Diagram) => {
     align-items: center;
     justify-content: space-between;
     background: $grayLight;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     gap: 12px;
 
     padding: 18px 20px;

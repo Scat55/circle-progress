@@ -33,6 +33,7 @@ watch(
 .ck-cp-container {
   box-shadow: none;
   border: 1px solid #dbdfe9;
-  width: 375px;
+  width: 100%;
+  max-width: 375px;
 }
 </style>

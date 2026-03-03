@@ -95,7 +95,8 @@ const disabledButton = computed(
 
 <style scoped lang="scss">
 .modal {
-  width: 410px;
+  width: 100%;
+  max-width: 410px;
   display: flex;
   flex-direction: column;
   justify-content: center;
