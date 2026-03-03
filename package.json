@@ -9,13 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cyhnkckali/vue3-color-picker": "^2.1.7",
+    "chart.js": "^4.5.1",
     "vue": "^3.5.25",
+    "vue-chartjs": "^5.3.3",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.2",
     "@vue/tsconfig": "^0.8.1",
+    "prettier": "^3.8.1",
+    "prettier-plugin-vue": "^1.1.6",
     "sass-embedded": "^1.97.3",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",

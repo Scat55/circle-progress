@@ -4,6 +4,7 @@ export enum UiColor {
   Warning = 'warning',
   Success = 'success',
   Error = 'error',
+  Default = 'default',
 }
 
 export enum UiSize {
