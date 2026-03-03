@@ -3,6 +3,7 @@ import { ref, defineAsyncComponent } from "vue";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
+import { Chart } from "@/components/chart";
 import type { Diagram } from "@/types";
 
 const AsyncModal = defineAsyncComponent(() => import("@/components/modal"));
@@ -50,38 +51,42 @@ const removeSector = (sector: Diagram) => {
     <div class="diagram-page">
       <h1 class="diagram-page_title">Круговая диаграмма</h1>
 
-      <div class="diagram-page_content">
-        <div
-          v-if="diagramValue.length"
-          v-for="sector in diagramValue"
-          :key="sector.name"
-          class="diagram-page_box"
-        >
-          <div class="diagram-page_box-item">
-            <p>{{ sector.name }}</p>
-            <p>{{ sector.size }} %</p>
+      <div class="diagram-page_char">
+        <div class="diagram-page_content">
+          <div
+            v-if="diagramValue.length"
+            v-for="sector in diagramValue"
+            :key="sector.name"
+            class="diagram-page_box"
+          >
+            <div class="diagram-page_box-item">
+              <p>{{ sector.name }}</p>
+              <p>{{ sector.size }} %</p>
 
-            <div
-              :style="{ backgroundColor: sector.color }"
-              class="diagram-page_box-item_color"
-            />
+              <div
+                :style="{ backgroundColor: sector.color }"
+                class="diagram-page_box-item_color"
+              />
+            </div>
+            <div class="diagram-page_box-item_icons">
+              <Icon
+                class="diagram-page_box-item_icon"
+                icon="Edit.svg"
+                @click="editSector(sector)"
+              />
+              <Icon
+                class="diagram-page_box-item_icon"
+                icon="Trash.svg"
+                @click="removeSector(sector)"
+              />
+            </div>
           </div>
-          <div class="diagram-page_box-item_icons">
-            <Icon
-              class="diagram-page_box-item_icon"
-              icon="Edit.svg"
-              @click="editSector(sector)"
-            />
-            <Icon
-              class="diagram-page_box-item_icon"
-              icon="Trash.svg"
-              @click="removeSector(sector)"
-            />
-          </div>
+
+          <span v-else>Создайте сектор</span>
+          <Button @click="openModal" size="lg"> Добавить сектор </Button>
         </div>
 
-        <span v-else>Создайте сектор</span>
-        <Button @click="openModal" size="lg"> Добавить сектор </Button>
+        <Chart :sectors="diagramValue" />
       </div>
 
       <div class="diagram-page_modal" v-if="isOpen">
@@ -103,6 +108,14 @@ const removeSector = (sector: Diagram) => {
   &_title {
     font-weight: 500;
     border-bottom: 1px solid #cecece;
+    margin-top: 40px;
+    padding-bottom: 5px;
+  }
+
+  &_char {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
   }
 
   &_content {
